@@ -10,3 +10,8 @@
     --light-grey: #adb5bd;
     --main-black: #212529;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+}
