@@ -19,3 +19,64 @@
     padding: 0;
     font-family: "Kanit";
 }
+
+header {
+    display: flex;
+    background-color: var(--navy-blue);
+    justify-content: space-between;
+}
+
+.logo-group {
+    display: inline-block;
+    align-content: center;
+    height: 10vh;
+    line-height: 10vh;
+}
+
+.logo-group .logo-link {
+    text-decoration: none;
+}
+
+.logo-group img {
+    width: 2.5rem;
+    margin-top: -0.5rem;
+    margin-left: 1rem;
+}
+
+.logo-group span {
+    color: var(--main-white);
+    font-size: 1.5rem;
+}
+
+.search-group {
+    display: inline-block;
+    align-content: center;
+}
+
+.search-group input {
+    width: 20rem;
+    height: 2rem;
+    border: 0 solid var(--light-grey);
+    border-radius: 3rem;
+    padding: 1rem;
+}
+
+.link-groups {
+    display: inline-block;
+    align-content: center;
+    line-height: 10vh;
+}
+
+.navbar-groups {
+    margin-right: 1rem;
+}
+
+.navbar-groups .navbar-item {
+    color: var(--main-white);
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.navbar-groups .navbar-item:hover {
+    color: var(--light-grey);
+}
