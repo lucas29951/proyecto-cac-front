@@ -107,3 +107,44 @@ header {
 .carousel-control-next {
     margin-right: -3rem;
 }
+
+.event-groups {
+    display: flex;
+    background-color: var(--secondary-white);
+    height: 10vh;
+    margin-top: 1rem;
+    justify-content: space-between;
+}
+
+.filter-groups {
+    display: inline-block;
+    align-content: center;
+}
+
+.filter-groups .filter-link {
+    text-decoration: none;
+    margin: 0 1.5rem;
+    color: var(--light-navy-blue);
+}
+
+.filter-groups .filter-link:hover {
+    color: var(--dark-navy-blue);
+    border-bottom: 2px solid var(--dark-navy-blue);
+}
+
+.order-groups {
+    display: inline-block;
+    align-content: center;
+    margin-right: 1.5rem;
+}
+
+.order-groups select {
+    background-color: var(--secondary-white);
+    color: var(--light-navy-blue);
+    border: 0;
+    text-align: center;
+}
+
+.order-groups select:hover {
+    cursor: pointer;
+}
