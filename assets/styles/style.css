@@ -117,19 +117,25 @@ header {
 }
 
 .filter-groups {
-    display: inline-block;
+    display: flex;
     align-content: center;
+    margin-left: 0.5rem;
 }
 
 .filter-groups .filter-link {
     text-decoration: none;
-    margin: 0 1.5rem;
+    margin: 0.7rem 1.5rem;
     color: var(--light-navy-blue);
 }
 
 .filter-groups .filter-link:hover {
     color: var(--dark-navy-blue);
     border-bottom: 2px solid var(--dark-navy-blue);
+}
+
+.filter-groups .filter-link .fa-solid {
+    display: flex;
+    justify-content: space-around;
 }
 
 .order-groups {
