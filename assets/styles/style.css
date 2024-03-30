@@ -108,7 +108,7 @@ header {
     margin-right: -3rem;
 }
 
-.event-groups {
+.filter-groups {
     display: flex;
     background-color: var(--secondary-white);
     height: 10vh;
@@ -116,24 +116,24 @@ header {
     justify-content: space-between;
 }
 
-.filter-groups {
+.categorie-groups {
     display: flex;
     align-content: center;
     margin-left: 0.5rem;
 }
 
-.filter-groups .filter-link {
+.categorie-groups .categorie-link {
     text-decoration: none;
     margin: 0.7rem 1.5rem;
     color: var(--light-navy-blue);
 }
 
-.filter-groups .filter-link:hover {
+.categorie-groups .categorie-link:hover {
     color: var(--dark-navy-blue);
     border-bottom: 2px solid var(--dark-navy-blue);
 }
 
-.filter-groups .filter-link .fa-solid {
+.categorie-groups .categorie-link .fa-solid {
     display: flex;
     justify-content: space-around;
 }
@@ -153,4 +153,13 @@ header {
 
 .order-groups select:hover {
     cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: var(--light-grey) 0.2rem 0.2rem;
+    cursor: pointer;
+}
+
+.card img {
+    object-fit: cover;
 }
