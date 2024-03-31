@@ -163,3 +163,42 @@ header {
 .card img {
     object-fit: cover;
 }
+
+footer {
+    display: flex;
+    background-color: var(--main-black);
+    justify-content: space-between;
+}
+
+.conjunt-info {
+    /* height: 10vh; */
+    /* line-height: 10vh; */
+    display: inline-block;
+    margin: 0.5rem 3rem;
+}
+
+.conjunt-info .info-item {
+    display: block;
+    text-decoration: none;
+    color: var(--secondary-white);
+    margin: 1rem;
+}
+
+.conjunt-info .info-item:hover {
+    color: var(--light-grey);
+}
+
+.social-groups {
+    align-content: center;
+    margin: 2rem;
+}
+
+.social-groups .social-link {
+    text-decoration: none;
+    color: var(--main-white);
+    margin: 0 1rem;
+}
+
+.social-groups .social-link:hover {
+    color: var(--light-grey);
+}
