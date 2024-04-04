@@ -100,12 +100,12 @@ header {
     margin-bottom: -1rem;
 }
 
-.carousel-control-prev {
-    margin-left: -3rem;
+.carousel-control-prev-icon {
+    margin-left: -5rem;
 }
 
-.carousel-control-next {
-    margin-right: -3rem;
+.carousel-control-next-icon {
+    margin-right: -5rem;
 }
 
 .filter-groups {
