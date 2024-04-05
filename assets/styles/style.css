@@ -317,6 +317,23 @@ footer {
     .card-body .btn {
         display: none;
     }
+
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .conjunt-info {
+        margin: 1rem 2rem;
+    }
+    
+    .conjunt-info .info-item {
+        margin: 1rem;
+    }
+
+    .social-groups {
+        margin: auto 1rem;
+    }
 }
 
 @media (min-width: 1200px) and (max-width: 1919px) {
