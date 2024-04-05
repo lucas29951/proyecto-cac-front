@@ -257,12 +257,8 @@ footer {
         justify-content: space-around;
     }
 
-    .conjunt-info {
-        height: 10vh;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-between;
+    .info-groups {
+        display: inline-flex;
     }
 }
 
@@ -337,7 +333,18 @@ footer {
 }
 
 @media (min-width: 1200px) and (max-width: 1919px) {
-	/* body {
-        background-color: green;
-    } */
+	.search-group {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .filter-groups {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .social-groups {
+        margin: auto 2rem;
+    }
 }
