@@ -108,12 +108,45 @@ header {
     margin-right: -5rem;
 }
 
+.details-group {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100vw;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
 .banner-event img {
     max-height: 50vh;
     object-fit: cover;
     margin: 1rem auto;
     width: 95vw;
     border-radius: 15px;
+}
+
+.info-event {
+    width: 60vw;
+}
+
+.buy-ticket {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    height: 30vh;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border: 2px solid var(--light-grey);
+    border-radius: 25px;
+}
+
+.btn-buy {
+    background-color: var(--light-navy-blue);
+    color: var(--main-white);
+    width: 40%;
+    padding: 0.5rem;
+    border-radius: 25px;
+    border: 0;
 }
 
 .filter-groups {
