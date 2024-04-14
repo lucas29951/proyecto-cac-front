@@ -108,6 +108,14 @@ header {
     margin-right: -5rem;
 }
 
+.banner-event img {
+    max-height: 50vh;
+    object-fit: cover;
+    margin: 1rem auto;
+    width: 95vw;
+    border-radius: 15px;
+}
+
 .filter-groups {
     display: flex;
     background-color: var(--secondary-white);
