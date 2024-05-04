@@ -151,6 +151,36 @@ header {
     text-decoration: none;
 }
 
+.main-contact {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 80vw;
+    margin: 1.5rem auto;
+}
+
+.data-groups {
+    /* background: blue; */
+    display: grid;
+    /* justify-content: center; */
+    /* margin-left: 3rem; */
+}
+
+.contact-groups {
+    /* background: red; */
+    display: grid;
+    align-items: start;
+}
+
+.contact-groups input {
+    height: 2rem;
+    padding: 0.5rem;
+}
+
+.contact-groups textarea {
+    height: 7rem;
+    padding: 0.5rem;
+}
+
 .filter-groups {
     display: flex;
     background-color: var(--secondary-white);
