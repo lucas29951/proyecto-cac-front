@@ -159,14 +159,10 @@ header {
 }
 
 .data-groups {
-    /* background: blue; */
     display: grid;
-    /* justify-content: center; */
-    /* margin-left: 3rem; */
 }
 
 .contact-groups {
-    /* background: red; */
     display: grid;
     align-items: start;
 }
