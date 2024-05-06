@@ -140,7 +140,7 @@ header {
     border-radius: 25px;
 }
 
-.btn-buy {
+.btn-style {
     background-color: var(--light-navy-blue);
     color: var(--main-white);
     width: 40%;
@@ -160,6 +160,12 @@ header {
 
 .data-groups {
     display: grid;
+}
+
+.phone-groups {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
 }
 
 .contact-groups {
