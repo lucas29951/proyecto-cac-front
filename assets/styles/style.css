@@ -335,6 +335,11 @@ footer {
     .info-groups {
         display: inline-flex;
     }
+
+    .conjunt-info {
+        display: inline-block;
+        margin: 0.5rem 1rem;
+    }
 }
 
 @media (min-width: 481px) and (max-width:767px) {
