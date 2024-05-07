@@ -326,6 +326,26 @@ footer {
         margin-top: 0.5rem;
     }
 
+    .details-group {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .details-group .info-event {
+        width: 90vw;
+        margin: 0 auto;
+    }
+
+    .info-event iframe {
+        width: 90vw;
+        height: 12rem;
+    }
+
+    .buy-ticket {
+        width: 90vw;
+        margin: 1.5rem auto;
+    }
+
     .main-contact {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
