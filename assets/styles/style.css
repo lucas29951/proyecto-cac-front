@@ -514,6 +514,25 @@ footer {
     }
 }
 
+@media (min-width: 992px) and (max-width:1999px) {
+    .main-contact {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 3rem auto;
+    }
+
+    .data-groups iframe {
+        width: 80vw;
+        height: 20rem;
+    }
+
+    .contact-groups input,
+    .contact-groups textarea,
+    .contact-groups button {
+        margin: 1rem 0;
+    }
+}
+
 @media (min-width: 1200px) and (max-width: 1919px) {
 	.search-group {
         display: flex;
