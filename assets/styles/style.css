@@ -460,6 +460,22 @@ footer {
         margin-right: -1rem;
     }
 
+    .main-contact {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 80vw;
+        margin: 1.5rem auto;
+    }
+    
+    .data-groups iframe {
+        width: 80vw;
+        height: 15rem;
+    }
+
+    .contact-groups {
+        gap: 1rem;
+    }
+
     .filter-groups {
         display: flex;
         justify-content: space-between;
