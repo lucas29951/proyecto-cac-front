@@ -409,7 +409,6 @@ footer {
     
     .contact-groups {
         display: grid;
-        /* align-items: start; */
         gap: 1.5rem;
     }
     
@@ -421,6 +420,11 @@ footer {
     .contact-groups textarea {
         height: 7rem;
         padding: 0.5rem;
+    }
+
+    .conjunt-info {
+        display: inline-block;
+        margin: 0.5rem 1rem;
     }
 }
 
