@@ -388,6 +388,40 @@ footer {
     .logo-group {
         margin: 0 1.5rem;
     }
+
+    .main-contact {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 80vw;
+        margin: 1.5rem auto;
+    }
+    
+    .data-groups iframe {
+        width: 80vw;
+        height: 15rem;
+    }
+    
+    .phone-groups {
+        display: flex;
+        justify-content: space-around;
+        width: 90%;
+    }
+    
+    .contact-groups {
+        display: grid;
+        /* align-items: start; */
+        gap: 1.5rem;
+    }
+    
+    .contact-groups input {
+        height: 2rem;
+        padding: 0.5rem;
+    }
+    
+    .contact-groups textarea {
+        height: 7rem;
+        padding: 0.5rem;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
