@@ -1,6 +1,15 @@
 
 const eventos = [
     {
+        titulo: "Microfono Abierto - OpenCast",
+        categoria: "Entretenimiento",
+        fechaHora: "2025-02-20 19:40",
+        ubicacion: "Teatro Hercules",
+        descripcion: "Unete a la ronda de anecdotas y charlas distendidas.",
+        precio: 150,
+        imagenUrl: "./assets/images/webp/open-podcast.webp"
+    },
+    {
         titulo: "Concierto de Rock",
         categoria: "Musica",
         fechaHora: "2024-04-10 18:00",
@@ -19,6 +28,15 @@ const eventos = [
         imagenUrl: "./assets/images/webp/art-gallery.webp"
     },
     {
+        titulo: "Lectura del libro Cien Años de Soledad",
+        categoria: "Arte",
+        fechaHora: "2025-01-21 14:30",
+        ubicacion: "Salon Bellas Alas",
+        descripcion: "Forma parte de la historia mas vendida y mas iconica de la literatura.",
+        precio: 2000,
+        imagenUrl: "./assets/images/webp/lectors-group.webp"
+    },
+    {
         titulo: "Fiesta del Estudiante",
         categoria: "Entretenimiento",
         fechaHora: "2024-06-25 21:30",
@@ -28,22 +46,13 @@ const eventos = [
         imagenUrl: "./assets/images/webp/public-party.webp"
     },
     {
-        titulo: "Microfono Abierto - OpenCast",
+        titulo: "Sesion de Radio Abierta al Publico",
         categoria: "Entretenimiento",
-        fechaHora: "2025-02-20 19:40",
-        ubicacion: "Teatro Hercules",
-        descripcion: "Unete a la ronda de anecdotas y charlas distendidas.",
-        precio: 150,
-        imagenUrl: "./assets/images/webp/open-podcast.webp"
-    },
-    {
-        titulo: "Lectura del libro Cien Años de Soledad",
-        categoria: "Arte",
-        fechaHora: "2025-01-21 14:30",
-        ubicacion: "Salon Bellas Alas",
-        descripcion: "Forma parte de la historia mas vendida y mas iconica de la literatura.",
-        precio: 2000,
-        imagenUrl: "./assets/images/webp/lectors-group.webp"
+        fechaHora: "2024-09-11 09:00",
+        ubicacion: "Salon Azul",
+        descripcion: "Participa del programa de Radio Nacional, esta vez abierta al publico en general.",
+        precio: 0,
+        imagenUrl: "./assets/images/webp/podcast-session.webp"
     },
     {
         titulo: "Festival de la Chacarera",
@@ -62,14 +71,5 @@ const eventos = [
         descripcion: "Ven y disfruta de los mejores productos del mercado y descubre nuevos sabores.",
         precio: 6000,
         imagenUrl: "./assets/images/webp/art-showcase.webp"
-    },
-    {
-        titulo: "Sesion de Radio Abierta al Publico",
-        categoria: "Entretenimiento",
-        fechaHora: "2024-09-11 09:00",
-        ubicacion: "Salon Azul",
-        descripcion: "Participa del programa de Radio Nacional, esta vez abierta al publico en general.",
-        precio: 0,
-        imagenUrl: "./assets/images/webp/podcast-session.webp"
     },
 ];
