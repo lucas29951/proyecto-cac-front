@@ -327,6 +327,17 @@ footer {
         margin-top: 0.5rem;
     }
 
+    .categorie-link {
+        width: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .filter-groups .order-groups {
+        margin: 0 auto;
+    }
+
     .details-group {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -387,6 +398,43 @@ footer {
 
     .logo-group {
         margin: 0 1.5rem;
+    }
+
+    .carousel-item {
+        height: 30vh;
+        padding: 1rem;
+    }
+    
+    .carousel-item img {
+        max-height: 30vh;
+        object-fit: cover;
+        filter: brightness(50%);
+    }
+    
+    .carousel-item .carousel-caption {
+        display: none;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        display: none;
+    }
+
+    .filter-groups {
+        display: flex;
+        align-items: center;
+        height: fit-content;
+    }
+
+    .filter-groups .order-groups {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .buy-ticket {
+        display: flex;
+        justify-content: center;
+        text-align: center;
     }
 
     .main-contact {
@@ -469,6 +517,12 @@ footer {
         margin-right: -1rem;
     }
 
+    .buy-ticket {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
     .main-contact {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -489,7 +543,7 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 8vh;
+        height: fit-content;
     }
 
     .card {
@@ -501,8 +555,13 @@ footer {
         font-size: 0.6rem;
     }
 
-    .card-body .btn {
+    .card-body .card-text {
         display: none;
+    }
+
+    .card-body .btn {
+        /* display: none; */
+        margin-top: 0.5rem;
     }
 
     footer {
@@ -524,6 +583,12 @@ footer {
 }
 
 @media (min-width: 992px) and (max-width:1999px) {
+    .filter-groups {
+        display: flex;
+        align-items: center;
+        height: fit-content;
+    }
+
     .main-contact {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
