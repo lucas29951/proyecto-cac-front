@@ -60,6 +60,7 @@ header {
     border: 0 solid var(--light-grey);
     border-radius: 3rem;
     padding: 1rem;
+    outline: none;
 }
 
 .link-groups {
