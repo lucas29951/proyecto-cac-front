@@ -1,33 +1,18 @@
 
-// Función para cargar eventos recibidos en la página principal
-function cargarEventos(listaEventos) {
+
+async function getApiData(url) {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+}
+
+
+function createCards(results, search) {
     const eventosContainer = document.querySelector(".events .row");
     eventosContainer.innerHTML = "";
-
-    listaEventos.forEach(evento => {
-        const eventoHTML = `
-            <div class="col">
-                <div class="card mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="${evento.imgen}" class="img-fluid rounded-start h-100" alt="${evento.titulo}">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">${evento.titulo}</h5>
-                                <p class="card-text"><small class="text-muted">Fecha y hora: ${evento.fechaHora}</small></p>
-                                <p class="card-text"><small class="text-muted">Ubicación: ${evento.ubicacion}</small></p>
-                                <p class="card-text"><small class="text-muted">Precio: $${evento.precio}</small></p>
-                                <a href="./details.html" class="btn btn-primary comprar-btn" data-evento='${JSON.stringify(evento)}'>Comprar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-        eventosContainer.innerHTML += eventoHTML;
-    });
-
+    for (const result of results) {
+        eventosContainer.innerHTML += templates[search](result);
+    }
     document.querySelectorAll(".comprar-btn").forEach(button => {
         button.addEventListener("click", (event) => {
             const evento = JSON.parse(event.target.getAttribute("data-evento"));
@@ -36,39 +21,46 @@ function cargarEventos(listaEventos) {
     });
 }
 
-// Función para filtrar eventos por categoría
-function filtrarPorCategoria(categoria) {
-    const eventosFiltrados = eventos.filter(evento => evento.categoria === categoria);
-    cargarEventos(eventosFiltrados);
+
+async function createEventosContainer(search) {
+    const result = await getApiData(api[search]);
+    createCards(result, search);
 }
 
-// Función para ordenar eventos por criterio
-function ordenarEventos(criterio) {
-    let eventosOrdenados = eventos;
-    switch (parseInt(criterio)) {
-        case 1: // ordenAlfabetico
-            eventosOrdenados.sort((a, b) => a.titulo.localeCompare(b.titulo));
+
+async function searchEvents(keyWord) {
+    const result = await getApiData(api["eventos"]);
+    const eventosEncontrados = result.filter(evento =>
+        evento.titulo.toLowerCase().includes(keyWord.toLowerCase())
+    );
+    createCards(eventosEncontrados,"eventos");
+}
+
+
+async function filterEvents(categoria){
+    const result = await getApiData(api["eventos"]);
+    const eventosFiltrados = result.filter(evento => evento.categoria === categoria);
+    createCards(eventosFiltrados,"eventos");
+}
+
+
+async function orderEvents(order){
+    const result = await getApiData(api["eventos"]);
+    switch (parseInt(order)) {
+        case 1:
+            result.sort((a, b) => a.titulo.localeCompare(b.titulo));
             break;
-        case 2: // porFecha
-            eventosOrdenados.sort((a, b) => new Date(a.fechaHora) - new Date(b.fechaHora));
+        case 2:
+            result.sort((a, b) => new Date(a.fechaHora) - new Date(b.fechaHora));
             break;
-        case 3: // mayorPrecio
-            eventosOrdenados.sort((a, b) => b.precio - a.precio);
+        case 3:
+            result.sort((a, b) => b.precio - a.precio);
             break;
-        case 4: // menorPrecio
-            eventosOrdenados.sort((a, b) => a.precio - b.precio);
+        case 4:
+            result.sort((a, b) => a.precio - b.precio);
             break;
         default:
             break;
     }
-    cargarEventos(eventosOrdenados);
+    createCards(result, "eventos")
 }
-
-// Función para buscar eventos por palabra clave
-function buscarEventos(palabraClave) {
-    const eventosEncontrados = eventos.filter(evento =>
-        evento.titulo.toLowerCase().includes(palabraClave.toLowerCase()) //||
-    );
-    cargarEventos(eventosEncontrados);
-}
-
