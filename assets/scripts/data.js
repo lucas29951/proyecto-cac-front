@@ -7,7 +7,7 @@ const eventos = [
         ubicacion: "Teatro Hercules",
         descripcion: "Unete a la ronda de anecdotas y charlas distendidas.",
         precio: 150,
-        imagenUrl: "./assets/images/webp/open-podcast.webp"
+        imagen: "./assets/images/webp/open-podcast.webp"
     },
     {
         titulo: "Concierto de Rock",
@@ -16,7 +16,7 @@ const eventos = [
         ubicacion: "Teatro Nacional",
         descripcion: "Disfruta de un concierto en vivo con las mejores bandas de rock del momento.",
         precio: 5500,
-        imagenUrl: "./assets/images/webp/stage-party.webp"
+        imagen: "./assets/images/webp/stage-party.webp"
     },
     {
         titulo: "Exposición de Arte Moderno",
@@ -25,7 +25,7 @@ const eventos = [
         ubicacion: "Museo de Arte",
         descripcion: "Descubre obras de arte contemporáneo de artistas locales e internacionales.",
         precio: 3000,
-        imagenUrl: "./assets/images/webp/art-gallery.webp"
+        imagen: "./assets/images/webp/art-gallery.webp"
     },
     {
         titulo: "Lectura del libro Cien Años de Soledad",
@@ -34,7 +34,7 @@ const eventos = [
         ubicacion: "Salon Bellas Alas",
         descripcion: "Forma parte de la historia mas vendida y mas iconica de la literatura.",
         precio: 2000,
-        imagenUrl: "./assets/images/webp/lectors-group.webp"
+        imagen: "./assets/images/webp/lectors-group.webp"
     },
     {
         titulo: "Fiesta del Estudiante",
@@ -43,7 +43,7 @@ const eventos = [
         ubicacion: "Plaza de la Musica",
         descripcion: "Te invitamos a la fiesta mas grande para festejar el Dia del Estudiante.",
         precio: 900,
-        imagenUrl: "./assets/images/webp/public-party.webp"
+        imagen: "./assets/images/webp/public-party.webp"
     },
     {
         titulo: "Sesion de Radio Abierta al Publico",
@@ -52,7 +52,7 @@ const eventos = [
         ubicacion: "Salon Azul",
         descripcion: "Participa del programa de Radio Nacional, esta vez abierta al publico en general.",
         precio: 0,
-        imagenUrl: "./assets/images/webp/podcast-session.webp"
+        imagen: "./assets/images/webp/podcast-session.webp"
     },
     {
         titulo: "Festival de la Chacarera",
@@ -61,7 +61,7 @@ const eventos = [
         ubicacion: "Estadio River Plate",
         descripcion: "Se parte del festival de chacarera y renueva tu cultura.",
         precio: 3200,
-        imagenUrl: "./assets/images/webp/concert-audience.webp"
+        imagen: "./assets/images/webp/concert-audience.webp"
     },
     {
         titulo: "Muestra y Degustacion de Articulos Comestibles",
@@ -70,6 +70,6 @@ const eventos = [
         ubicacion: "Nodo Tecnologico",
         descripcion: "Ven y disfruta de los mejores productos del mercado y descubre nuevos sabores.",
         precio: 6000,
-        imagenUrl: "./assets/images/webp/art-showcase.webp"
+        imagen: "./assets/images/webp/art-showcase.webp"
     },
 ];
