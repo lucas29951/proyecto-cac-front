@@ -45,13 +45,12 @@ function cargarLista(listaEventos) {
     eventosContainer.innerHTML = "";
 
     listaEventos.forEach(evento => {
-        const imagenEvento = imagenes.find(imagen => imagen.id === evento.imagenId);
         const eventoHTML = `
             <div class="col">
                 <div class="card mb-3">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="${imagenEvento.url}" class="img-fluid rounded-start h-100" alt="${evento.titulo}">
+                            <img src="${evento.imgenUrl}" class="img-fluid rounded-start h-100" alt="${evento.titulo}">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -79,6 +78,7 @@ function cargarLista(listaEventos) {
 
 // Función para filtrar eventos por categoría
 function filtrarPorCategoria(categoria) {
+    console.log("Categoria: " + categoria);
     const eventosFiltrados = eventos.filter(evento => evento.categoria === categoria);
     cargarLista(eventosFiltrados);
 }
