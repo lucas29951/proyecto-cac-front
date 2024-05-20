@@ -623,4 +623,24 @@ footer {
     .social-groups {
         margin: auto 2rem;
     }
+
+    .main-contact {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .data-groups iframe {
+        width: 40vw;
+        height: 20rem;
+    }
+
+    .contact-groups {
+        margin-left: 2rem;
+    }
+
+    .contact-groups input,
+    .contact-groups textarea,
+    .contact-groups button {
+        margin: 1rem 0;
+    }
 }
