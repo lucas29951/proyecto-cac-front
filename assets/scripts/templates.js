@@ -4,7 +4,7 @@ const templates = {
     <div class="card mb-3">
         <div class="row g-0">
             <div class="col-md-4">
-                <img src="${evento.imgen}" class="img-fluid rounded-start h-100" alt="${evento.titulo}">
+                <img src="${evento.imagen}" class="img-fluid rounded-start h-100" alt="${evento.titulo}">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
