@@ -1,6 +1,6 @@
 
 // Event listeners para cargar los eventos
-document.addEventListener("DOMContentLoaded", cargarEventos);
+document.addEventListener("DOMContentLoaded", cargarEventos(eventos));
 
 
 // Event listeners para ordenar los eventos segun X criterio
