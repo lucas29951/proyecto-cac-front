@@ -232,6 +232,14 @@ header {
     cursor: pointer;
 }
 
+.card-body {
+    height: 7.5rem;
+}
+
+.card-footer {
+    border: 0 transparent;
+}
+
 .card:hover {
     box-shadow: var(--light-grey) 0.2rem 0.2rem;
     cursor: pointer;
