@@ -347,6 +347,14 @@ footer {
         margin: 0 auto;
     }
 
+    .card-body {
+        height: max-content;
+    }
+
+    .card-footer {
+        display: none;
+    }
+
     .details-group {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -438,6 +446,10 @@ footer {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .card-body {
+        height: max-content;
     }
 
     .buy-ticket {
@@ -555,13 +567,17 @@ footer {
         height: fit-content;
     }
 
-    .card {
+    /* .card {
         height: 15vh;
-    }
+    } */
 
     .card-body {
         height: 15vh;
         font-size: 0.6rem;
+    }
+
+    .card-body .card-title {
+        font-size: 1rem;
     }
 
     .card-body .card-text {
