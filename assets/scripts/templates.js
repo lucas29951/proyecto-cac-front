@@ -10,9 +10,11 @@ const templates = {
                 <div class="card-body">
                     <h5 class="card-title">${evento.titulo}</h5>
                     <p class="card-text"><small class="text-muted">Fecha y hora: ${evento.fechaHora}</small></p>
-                    <p class="card-text"><small class="text-muted">Ubicación: ${evento.ubicacion}</small></p>
-                    <p class="card-text"><small class="text-muted">Precio: $${evento.precio}</small></p>
-                    <a href="./details.html" class="btn btn-primary comprar-btn" data-evento='${JSON.stringify(evento)}'>Comprar</a>
+                    
+                    
+                </div>
+                <div class="card-footer">
+                <a href="./details.html" class="btn btn-primary comprar-btn" data-evento='${JSON.stringify(evento)}'>Comprar</a>
                 </div>
             </div>
         </div>
