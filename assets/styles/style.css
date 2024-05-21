@@ -567,10 +567,6 @@ footer {
         height: fit-content;
     }
 
-    /* .card {
-        height: 15vh;
-    } */
-
     .card-body {
         height: 15vh;
         font-size: 0.6rem;
@@ -585,7 +581,6 @@ footer {
     }
 
     .card-body .btn {
-        /* display: none; */
         margin-top: 0.5rem;
     }
 
