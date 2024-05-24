@@ -2,7 +2,7 @@
 document.getElementById('contactForm').addEventListener('submit', function (event) {
     let valid = true;
 
-    // Validar campos de texto y email
+
     const fields = ['name', 'email', 'subject', 'message'];
     fields.forEach(function (field) {
         const input = document.getElementById(field);
@@ -15,7 +15,6 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     });
     
 
-    // Validar select
     const contactMethod = document.getElementById('contact-method');
     if (!contactMethod.value) {
         valid = false;
@@ -25,7 +24,6 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     }
     
 
-    // Validar radiobuttons
     const contactPreferences = document.getElementsByName('contact-preference');
     let preferenceSelected = false;
     for (let i = 0; i < contactPreferences.length; i++) {
@@ -46,7 +44,6 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     }
     
 
-    // Validar checkbox
     const terms = document.getElementById('terms');
     if (!terms.checked) {
         valid = false;
@@ -56,7 +53,6 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     }
     
 
-    // Validar archivo de imagen
     const upload = document.getElementById('upload');
     if (!upload.files.length) {
         valid = false;
