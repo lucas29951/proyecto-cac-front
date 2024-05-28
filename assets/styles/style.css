@@ -234,6 +234,11 @@ header {
     height: max-content;
 }
 
+.invalid {
+    border: 2px solid rgba(255, 0, 0, 0.651);
+    border-radius: 5px;
+}
+
 .filter-groups {
     display: flex;
     background-color: var(--secondary-white);
