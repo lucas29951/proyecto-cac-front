@@ -15,8 +15,12 @@ function createCards(results, search) {
     }
     document.querySelectorAll(".comprar-btn").forEach(button => {
         button.addEventListener("click", (event) => {
-            const evento = JSON.parse(event.target.getAttribute("data-evento"));
+            const evento = JSON.parse(button.getAttribute("data-evento"));
             localStorage.setItem("eventoSeleccionado", JSON.stringify(evento));
+
+            if(event.target.classList.contains("link-card")){
+                localStorage.setItem("eventoSeleccionado", JSON.stringify(evento));
+            }
         });
     });
 }
