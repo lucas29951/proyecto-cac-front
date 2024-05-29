@@ -239,6 +239,17 @@ header {
     border-radius: 5px;
 }
 
+.error-message {
+    color: rgba(255, 0, 0, 0.863);
+    font-size: 12px;
+}
+
+#error-check {
+    display: none;
+    color: rgba(255, 0, 0, 0.863);
+    font-size: 12px;
+}
+
 .filter-groups {
     display: flex;
     background-color: var(--secondary-white);
