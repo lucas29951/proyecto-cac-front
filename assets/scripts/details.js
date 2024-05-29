@@ -1,7 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     const evento = JSON.parse(localStorage.getItem("eventoSeleccionado"));
-    console.log(evento);
     if (evento) {
         document.querySelector(".banner-event img").src = evento.imagen;
         document.querySelector(".banner-event img").alt = evento.titulo;
