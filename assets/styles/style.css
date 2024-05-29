@@ -161,7 +161,7 @@ header {
 }
 
 .data-groups {
-    display: grid;
+    display: block;
 }
 
 .phone-groups {
