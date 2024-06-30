@@ -8,10 +8,11 @@ async function getApiData(url) {
 
 
 function createCards(results, search) {
+    console.log(results);
     const eventosContainer = document.querySelector(".events .row");
     eventosContainer.innerHTML = "";
-    for (const result of results) {
-        eventosContainer.innerHTML += templates[search](result);
+    for (let i = 0; i < results.length; i++) {
+        eventosContainer.innerHTML += templates[search](results[i]);
     }
     document.querySelectorAll(".comprar-btn").forEach(button => {
         button.addEventListener("click", (event) => {
