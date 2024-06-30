@@ -1,6 +1,6 @@
 
 
-document.addEventListener("DOMContentLoaded", createEventosContainer("eventos"));
+document.addEventListener("DOMContentLoaded", createEventosContainer("eventapi"));
 
 
 document.querySelector("#search-input").addEventListener("keypress", (event) => {
