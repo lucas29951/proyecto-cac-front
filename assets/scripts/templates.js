@@ -1,6 +1,6 @@
 
 const templates = {
-    eventos: (evento) => `<div class="col">
+    eventapi: (evento) => `<div class="col">
     <a href="./details.html" class="comprar-btn link-card" data-evento='${JSON.stringify(evento)}'>
     <div class="card mb-3">
         <div class="row g-0">
