@@ -8,7 +8,6 @@ async function getApiData(url) {
 
 
 function createCards(results, search) {
-    console.log(results);
     const eventosContainer = document.querySelector(".events .row");
     eventosContainer.innerHTML = "";
     for (let i = 0; i < results.length; i++) {
