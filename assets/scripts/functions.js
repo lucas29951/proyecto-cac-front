@@ -33,23 +33,23 @@ async function createEventosContainer(search) {
 
 
 async function searchEvents(keyWord) {
-    const result = await getApiData(api["eventos"]);
+    const result = await getApiData(api["eventapi"]);
     const eventosEncontrados = result.filter(evento =>
         evento.titulo.toLowerCase().includes(keyWord.toLowerCase())
     );
-    createCards(eventosEncontrados,"eventos");
+    createCards(eventosEncontrados,"eventapi");
 }
 
 
 async function filterEvents(categoria){
-    const result = await getApiData(api["eventos"]);
+    const result = await getApiData(api["eventapi"]);
     const eventosFiltrados = result.filter(evento => evento.categoria === categoria);
-    createCards(eventosFiltrados,"eventos");
+    createCards(eventosFiltrados,"eventapi");
 }
 
 
 async function orderEvents(order){
-    const result = await getApiData(api["eventos"]);
+    const result = await getApiData(api["eventapi"]);
     switch (parseInt(order)) {
         case 1:
             result.sort((a, b) => a.titulo.localeCompare(b.titulo));
@@ -66,5 +66,5 @@ async function orderEvents(order){
         default:
             break;
     }
-    createCards(result, "eventos")
+    createCards(result, "eventapi")
 }
