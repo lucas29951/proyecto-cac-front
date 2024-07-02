@@ -42,8 +42,17 @@ async function searchEvents(keyWord) {
 
 
 async function filterEvents(categoria){
+    const categories = await getApiData(api["categoryapi"]);
+    let categorieID = -1;
+    let found = 0;
+    for (let i = 0; i < categories.length && found == 0; i++) {
+        if (categories[i].name === categoria) {
+            categorieID = categories[i].id;
+            found = 1;
+        }
+    }
     const result = await getApiData(api["eventapi"]);
-    const eventosFiltrados = result.filter(evento => evento.categoria === categoria);
+    const eventosFiltrados = result.filter(evento => evento.category_id === categorieID);
     createCards(eventosFiltrados,"eventapi");
 }
 
