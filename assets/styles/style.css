@@ -160,6 +160,13 @@ header {
     margin: 1.5rem auto;
 }
 
+.main-auth {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 80vw;
+    margin: 1.5rem auto;
+}
+
 .data-groups {
     display: block;
 }
@@ -175,7 +182,18 @@ header {
     align-items: start;
 }
 
+.auth-groups {
+    display: grid;
+    align-items: start;
+}
+
 .contact-groups input {
+    height: 2rem;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.auth-groups input {
     height: 2rem;
     padding: 0.5rem;
     width: 100%;
@@ -189,6 +207,10 @@ header {
 
 .contact-groups input[type="radio"],
 .contact-groups input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.auth-groups input[type="checkbox"] {
     margin-right: 0.5rem;
 }
 
@@ -222,6 +244,16 @@ header {
 }
 
 .check-input input {
+    width: 1rem;
+    height: 1rem;
+}
+
+.auth-groups .check-input {
+    display: flex;
+    align-items: center;
+}
+
+.auth-input input {
     width: 1rem;
     height: 1rem;
 }
@@ -506,6 +538,14 @@ footer {
         margin-bottom: 1rem;
     }
 
+    .auth-groups > * {
+        margin: 0.5rem 0;
+    }
+
+    .auth-groups div {
+        margin-bottom: 1rem;
+    }
+
     .method-group #contact-method {
         width: 100%;
     }
@@ -515,6 +555,11 @@ footer {
     }
 
     .contact-groups button {
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .auth-groups button {
         margin-top: 1rem;
         width: 100%;
     }
@@ -593,6 +638,13 @@ footer {
         width: 80vw;
         margin: 1.5rem auto;
     }
+
+    .main-auth {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 80vw;
+        margin: 1.5rem auto;
+    }
     
     .data-groups iframe {
         width: 80vw;
@@ -618,6 +670,20 @@ footer {
         height: 2rem;
         padding: 0.5rem;
     }
+
+    .auth-groups {
+        display: grid;
+        gap: 1.5rem;
+    }
+    
+    .auth-groups div {
+        margin-bottom: 1rem;
+    }
+
+    .auth-groups input {
+        height: 2rem;
+        padding: 0.5rem;
+    }
     
     .contact-groups textarea {
         height: 7rem;
@@ -633,6 +699,11 @@ footer {
     }
 
     .contact-groups button {
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .auth-groups button {
         margin-top: 1rem;
         width: 100%;
     }
@@ -696,6 +767,13 @@ footer {
         width: 80vw;
         margin: 1.5rem auto;
     }
+
+    .main-auth {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 80vw;
+        margin: 1.5rem auto;
+    }
     
     .data-groups iframe {
         width: 80vw;
@@ -710,6 +788,14 @@ footer {
         margin-bottom: 1rem;
     }
 
+    .auth-groups {
+        gap: 1rem;
+    }
+
+    .auth-groups div {
+        margin-bottom: 1rem;
+    }
+
     #contact-method {
         width: 100%;
     }
@@ -719,6 +805,11 @@ footer {
     }
 
     .contact-groups button {
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .auth-groups button {
         margin-top: 1rem;
         width: 100%;
     }
@@ -778,6 +869,12 @@ footer {
         margin: 3rem auto;
     }
 
+    .main-auth {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 3rem auto;
+    }
+
     .data-groups iframe {
         width: 80vw;
         height: 20rem;
@@ -786,6 +883,11 @@ footer {
     .contact-groups input,
     .contact-groups textarea,
     .contact-groups button {
+        margin: 1rem 0;
+    }
+
+    .auth-groups input,
+    .auth-groups button {
         margin: 1rem 0;
     }
 }
@@ -811,6 +913,12 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .main-auth {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 50vw;
+    }
+
     .data-groups iframe {
         width: 40vw;
         height: 20rem;
@@ -820,9 +928,18 @@ footer {
         margin-left: 2rem;
     }
 
+    .auth-groups {
+        margin-left: 2rem;
+    }
+
     .contact-groups input,
     .contact-groups textarea,
     .contact-groups button {
+        margin: 1rem 0;
+    }
+
+    .auth-groups input,
+    .auth-groups button {
         margin: 1rem 0;
     }
 }
