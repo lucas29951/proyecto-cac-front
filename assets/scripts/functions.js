@@ -27,13 +27,13 @@ function createCards(results, search) {
 
 
 async function createEventosContainer(search) {
-    const result = await getApiData(api[search]);
+    const result = await getApiData(api[search]+"/events");
     createCards(result, search);
 }
 
 
 async function searchEvents(keyWord) {
-    const result = await getApiData(api["eventapi"]);
+    const result = await getApiData(api["eventapi"]+"/events");
     const eventosEncontrados = result.filter(evento =>
         evento.titulo.toLowerCase().includes(keyWord.toLowerCase())
     );
@@ -42,7 +42,7 @@ async function searchEvents(keyWord) {
 
 
 async function filterEvents(categoria){
-    const categories = await getApiData(api["categoryapi"]);
+    const categories = await getApiData(api["eventapi"]+"/categories");
     let categorieID = -1;
     let found = 0;
     for (let i = 0; i < categories.length && found == 0; i++) {
@@ -51,14 +51,14 @@ async function filterEvents(categoria){
             found = 1;
         }
     }
-    const result = await getApiData(api["eventapi"]);
+    const result = await getApiData(api["eventapi"]+"/events");
     const eventosFiltrados = result.filter(evento => evento.category_id === categorieID);
     createCards(eventosFiltrados,"eventapi");
 }
 
 
 async function orderEvents(order){
-    const result = await getApiData(api["eventapi"]);
+    const result = await getApiData(api["eventapi"]+"/events");
     switch (parseInt(order)) {
         case 1:
             result.sort((a, b) => a.titulo.localeCompare(b.titulo));
