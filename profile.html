@@ -36,25 +36,26 @@
     </div>
   </header>
 
-  <main class="main-auth">
-
-    <div class="auth-groups">
-      <h2>Usuario: aaaabbbbccc</h2>
-      <form id="authForm" class="login">
-        <div>
-          <input type="text" name="username" id="username" placeholder="Nombre de Usuario">
-        </div>
-        <div>
-          <input type="password" name="password" id="password" placeholder="Contraseña">
-        </div>
-        <div id="error-check">
-          <p>Debe aceptar los terminos para continuar.</p>
-        </div>
-        <div>
-          <button type="submit" class="btn-style">Aceptar</button>
-        </div>
-      </form>
-      <a class="account-link" href="./register.html">Soy nuevo! Crear una cuenta.</a>
+  <main class="main-profile">
+    <div class="head-profile">
+        <h2>Usuario: aaaabbbbccc</h2>
+        <button class="btn-style" onclick="logout()">Cerrar Sesion</button>
+    </div>
+    <div class="body-profile">
+        <h5>Mis Tickets</h5>
+      <table>
+        <th>Evento</th>
+        <th>Cantidad</th>
+        <th>Total Pagado</th>
+        <th>Opciones</th>
+        <tr>
+            <td>Concierto</td>
+            <td>x 2</td>
+            <td>$ 6000.00</td>
+            <td>Borrar</td>
+        </tr>
+      </table>
+      <a class="" href="#">Agregar</a>
     </div>
 
   </main>
@@ -87,11 +88,11 @@
     </div>
   </footer>
 
-  <script src="./assets/scripts/config.js"></script>
+  <!-- <script src="./assets/scripts/config.js"></script> -->
   <!-- <script src="./assets/scripts/templates.js"></script> -->
   <!-- <script src="./assets/scripts/functions.js"></script> -->
   <!-- <script src="./assets/scripts/events.js"></script> -->
-   <!-- <script src="./assets/scripts/auth.js"></script> -->
+   <script src="./assets/scripts/profile.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
