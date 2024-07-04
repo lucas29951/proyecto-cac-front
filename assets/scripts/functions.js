@@ -91,7 +91,7 @@ async function eventsByUser(search) {
     fetch(api[search]+`/tickets/${user.id}`, {
         method: 'GET',
         headers: {
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${user.accessToken}`
         }
     })
     .then(response => response.json())
