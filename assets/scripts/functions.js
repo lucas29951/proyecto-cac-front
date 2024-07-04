@@ -87,8 +87,23 @@ function logout() {
 async function eventsByUser(search) {
     let user = JSON.parse(localStorage.getItem('user'));
     const ticketsContainer = document.querySelector("table tbody");
-    const results = await getApiData(api[search]+`/tickets/${user.id}`);
-    for (let i = 0; i < results.length; i++) {
-        ticketsContainer.innerHTML += templates["tickets"](results[i]);
-    }
+
+    try {
+        const response = await fetch(api["eventapi"]+`/tickets/${user.id}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + user.token
+          }
+        });
+    
+        const data = await response.json();
+        for (let i = 0; i < data.length; i++) {
+            ticketsContainer.innerHTML += templates["tickets"](data[i]);
+        }
+        
+      } catch (error) {
+        console.error('Error:', error);
+        alert('ERROR DEL SERVIDOR');
+      }
 }
