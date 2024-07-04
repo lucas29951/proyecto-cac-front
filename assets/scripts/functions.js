@@ -88,22 +88,43 @@ async function eventsByUser(search) {
     let user = JSON.parse(localStorage.getItem('user'));
     const ticketsContainer = document.querySelector("table tbody");
 
-    try {
-        const response = await fetch(api["eventapi"]+`/tickets/${user.id}`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + user.token
-          }
-        });
-    
-        const data = await response.json();
-        for (let i = 0; i < data.length; i++) {
-            ticketsContainer.innerHTML += templates["tickets"](data[i]);
+    fetch(api[search]+`/tickets/${user.id}`, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${token}`
         }
-        
-      } catch (error) {
-        console.error('Error:', error);
-        alert('ERROR DEL SERVIDOR');
-      }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Tickets del usuario:", data);
+        displayTickets(data);
+    })
+    .catch(error => console.error('Error al obtener los tickets:', error));
+}
+
+function displayTickets(tickets) {
+    const ticketsContainer = document.getElementById('tickets-container');
+    if (!ticketsContainer) {
+        console.error('No se encontró el contenedor de tickets.');
+        return;
+    }
+
+    ticketsContainer.innerHTML = '';
+
+    if (tickets.length === 0) {
+        ticketsContainer.innerHTML = '<p>No tienes tickets.</p>';
+        return;
+    }
+
+    tickets.forEach(ticket => {
+        const ticketElement = document.createElement('div');
+        ticketElement.classList.add('ticket-item');
+        ticketElement.innerHTML = `
+            <h3>Evento: ${ticket.id}</h3>
+            <p>Cantidad: ${ticket.quantity}</p>
+            <p>Precio Total: ${ticket.total_price}</p>
+            <p>Fecha: ${ticket.purchase_date}</p>
+        `;
+        ticketsContainer.appendChild(ticketElement);
+    });
 }
