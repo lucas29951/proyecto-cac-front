@@ -178,6 +178,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    border-bottom: 1px solid rgb(68, 66, 66);
 }
 
 .head-profile .btn-style {
@@ -191,8 +192,15 @@ header {
     margin: 2rem;
 }
 
-.body-profile table {
-    border: 2px solid black;
+.tickets-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-item {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid black;
+    box-shadow: 0 7px 16px 0 rgba(0,0,0,0.57);
 }
 
 .data-groups {
