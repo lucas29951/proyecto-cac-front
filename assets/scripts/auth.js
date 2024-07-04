@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         console.log("HAY UNA SESION INICIADA!");
         const navbar = document.querySelector(".navbar-groups");
-        const registerLink = navbar.querySelector('a[href="./register"]');
+        const registerLink = document.querySelector('a[href="./register"]');
         console.log(navbar);
         console.log(registerLink);
 
