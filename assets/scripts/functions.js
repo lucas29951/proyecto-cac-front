@@ -77,3 +77,9 @@ async function orderEvents(order){
     }
     createCards(result, "eventapi")
 }
+
+
+function logout() {
+    localStorage.removeItem('user');
+    window.location.href = './login.html';
+  };
