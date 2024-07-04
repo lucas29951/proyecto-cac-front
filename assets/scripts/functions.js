@@ -7,11 +7,11 @@ async function getApiData(url) {
 }
 
 
-function createCards(results, search) {
+function createCards(results) {
     const eventosContainer = document.querySelector(".events .row");
     eventosContainer.innerHTML = "";
     for (let i = 0; i < results.length; i++) {
-        eventosContainer.innerHTML += templates[search](results[i]);
+        eventosContainer.innerHTML += templates["eventos"](results[i]);
     }
     document.querySelectorAll(".comprar-btn").forEach(button => {
         button.addEventListener("click", (event) => {
@@ -28,7 +28,7 @@ function createCards(results, search) {
 
 async function createEventosContainer(search) {
     const result = await getApiData(api[search]+"/events");
-    createCards(result, search);
+    createCards(result);
 }
 
 
@@ -37,7 +37,7 @@ async function searchEvents(keyWord) {
     const eventosEncontrados = result.filter(evento =>
         evento.titulo.toLowerCase().includes(keyWord.toLowerCase())
     );
-    createCards(eventosEncontrados,"eventapi");
+    createCards(eventosEncontrados);
 }
 
 
@@ -83,3 +83,12 @@ function logout() {
     localStorage.removeItem('user');
     window.location.href = './login.html';
   };
+
+async function eventsByUser(search) {
+    let user = JSON.parse(localStorage.getItem('user'));
+    const ticketsContainer = document.querySelector("table tbody");
+    const results = await getApiData(api[search]+`/tickets/${user.id}`);
+    for (let i = 0; i < results.length; i++) {
+        ticketsContainer.innerHTML += templates["tickets"](results[i]);
+    }
+}
