@@ -4,5 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (user) {
       const titulo = document.querySelector(".head-profile h2");
       titulo.textContent = "Usuario: " + user.username;
+      eventsByUser("eventapi");
     }
   });
