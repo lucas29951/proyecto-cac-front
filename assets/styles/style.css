@@ -167,6 +167,34 @@ header {
     margin: 1.5rem auto;
 }
 
+.main-profile {
+    display: flex;
+    flex-direction: column;
+    /* width: 100vw; */
+    margin: 3rem auto;
+}
+
+.head-profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.head-profile .btn-style {
+    width: 15%;
+    height: fit-content;
+}
+
+.body-profile {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+}
+
+.body-profile table {
+    border: 2px solid black;
+}
+
 .data-groups {
     display: block;
 }
