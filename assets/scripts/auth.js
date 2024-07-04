@@ -1,26 +1,9 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-    let user = JSON.parse(localStorage.getItem('user'));
-    if (!user) {
-        console.log("NO ESTA EN SESION");
-    } else {
-        console.log("HAY UNA SESION INICIADA!");
-        const navbar = document.querySelector(".navbar-groups");
-        const registerLink = document.getElementById('register-link');
-        console.log(navbar);
-        console.log(registerLink);
-
-        if (registerLink) {
-            registerLink.remove();
-
-            const userElement = document.createElement('a');
-            userElement.classList.add('navbar-item');
-            userElement.textContent = `${user.username}`.toUpperCase();
-            userElement.href = '#';
-
-            navbar.appendChild(userElement);
-        }
-    }
+  let user = JSON.parse(localStorage.getItem('user'));
+  if (user) {
+    window.location.href = "./profile.html";
+  }
 });
 
 
@@ -86,8 +69,7 @@ document.querySelector('#authForm.login')?.addEventListener('submit', async (eve
     const data = await response.json();
     if (response.ok) {
       localStorage.setItem('user', JSON.stringify(data));
-      alert('Login exitoso');
-      window.location.href = 'index.html';
+      window.location.href = './profile.html';
     } else {
       alert(`Error: ${data.message}`);
     }
@@ -101,7 +83,7 @@ document.querySelector('#authForm.login')?.addEventListener('submit', async (eve
 const logout = () => {
   localStorage.removeItem('user');
   alert('Sesión cerrada');
-  window.location.href = 'login.html';
+  window.location.href = './login.html';
 };
 
 document.querySelector('#logoutButton')?.addEventListener('click', logout);
