@@ -1,10 +1,10 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log(api["eventapi"]+"/users/register");
     let user = JSON.parse(localStorage.getItem('user'));
     if (!user) {
         console.log("NO ESTA EN SESION");
     } else {
+        console.log("HAY UNA SESION INICIADA!");
         const navbar = document.querySelector(".navbar-groups");
         const registerLink = navbar.querySelector('a[href="./register.html"]');
 
@@ -65,7 +65,7 @@ document.querySelector('#authForm.register')?.addEventListener('submit', async (
   }
 });
 
-// Login de usuario
+
 document.querySelector('#authForm.login')?.addEventListener('submit', async (event) => {
   event.preventDefault();
 
@@ -95,7 +95,7 @@ document.querySelector('#authForm.login')?.addEventListener('submit', async (eve
   }
 });
 
-// Logout de usuario
+
 const logout = () => {
   localStorage.removeItem('user');
   alert('Sesión cerrada');
