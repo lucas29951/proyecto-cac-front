@@ -96,7 +96,6 @@ async function eventsByUser(search) {
     })
     .then(response => response.json())
     .then(data => {
-        console.log("Tickets del usuario:", data);
         displayTickets(data);
     })
     .catch(error => console.error('Error al obtener los tickets:', error));
@@ -117,13 +116,10 @@ async function displayTickets(tickets) {
     }
 
     const result = await getApiData(api["eventapi"]+"/events");
-    console.log("EVENTOS " + result);
     
     tickets.forEach(ticket => {
         const eventos = result.filter(evento => evento.id === ticket.event_id);
-        console.log("FILTRADOS: " + eventos);
         let nameEvent = eventos.length === 1 ? `${eventos[0].titulo}` : 'Generico';
-        console.log("NOMBRE: " + nameEvent);
         const ticketElement = document.createElement('div');
         ticketElement.classList.add('ticket-item');
         ticketElement.innerHTML = `
