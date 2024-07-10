@@ -119,7 +119,7 @@ async function displayTickets(tickets) {
     const result = await getApiData(api["eventapi"]+"/events");
     
     tickets.forEach(ticket => {
-        let eventoName = result.filter(evento => evento.id === ticket.id);
+        let eventoName = result.filter(evento => evento.id === ticket.event_id);
         const ticketElement = document.createElement('div');
         ticketElement.classList.add('ticket-item');
         ticketElement.innerHTML = `
