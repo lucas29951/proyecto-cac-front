@@ -102,7 +102,7 @@ async function eventsByUser(search) {
     .catch(error => console.error('Error al obtener los tickets:', error));
 }
 
-function displayTickets(tickets) {
+async function displayTickets(tickets) {
     const ticketsContainer = document.getElementById('tickets-container');
     if (!ticketsContainer) {
         console.error('No se encontró el contenedor de tickets.');
@@ -116,11 +116,14 @@ function displayTickets(tickets) {
         return;
     }
 
+    const result = await getApiData(api["eventapi"]+"/events");
+    
     tickets.forEach(ticket => {
+        let eventoName = result.filter(evento => evento.id === ticket.id);
         const ticketElement = document.createElement('div');
         ticketElement.classList.add('ticket-item');
         ticketElement.innerHTML = `
-            <p>Evento: ${ticket.id}</p>
+            <p>Evento: ${eventoName.titulo}</p>
             <p>Cantidad: ${ticket.quantity}</p>
             <p>Precio Total: ${ticket.total_price}</p>
             <p>Fecha: ${ticket.purchase_date}</p>
