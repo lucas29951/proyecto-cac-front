@@ -111,7 +111,7 @@ async function displayTickets(tickets) {
     ticketsContainer.innerHTML = '';
 
     if (tickets.length === 0) {
-        ticketsContainer.innerHTML = '<p>No tienes tickets.</p><a class="" href="#">Agregar</a>';
+        ticketsContainer.innerHTML = '<p>No tienes tickets.</p>';
         return;
     }
 
