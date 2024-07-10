@@ -202,6 +202,9 @@ header {
     border-bottom: 1px solid black;
     box-shadow: 0 7px 16px 0 rgba(0,0,0,0.57);
     padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .data-groups {
