@@ -120,7 +120,7 @@ function displayTickets(tickets) {
         const ticketElement = document.createElement('div');
         ticketElement.classList.add('ticket-item');
         ticketElement.innerHTML = `
-            <h3>Evento: ${ticket.id}</h3>
+            <p>Evento: ${ticket.id}</p>
             <p>Cantidad: ${ticket.quantity}</p>
             <p>Precio Total: ${ticket.total_price}</p>
             <p>Fecha: ${ticket.purchase_date}</p>
