@@ -38,7 +38,7 @@ document.getElementById('btn-compra').addEventListener('click', async (event) =>
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${userLogged.token}`
+                'Authorization': `Bearer ${userLogged.accessToken}`
             },
             body: JSON.stringify(newTicket)
         });
