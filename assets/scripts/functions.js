@@ -117,13 +117,17 @@ async function displayTickets(tickets) {
     }
 
     const result = await getApiData(api["eventapi"]+"/events");
+    console.log("EVENTOS " + result);
     
     tickets.forEach(ticket => {
-        let eventoName = result.filter(evento => evento.id === ticket.event_id);
+        const eventos = result.filter(evento => evento.id === ticket.event_id);
+        console.log("FILTRADOS: " + eventos);
+        let nameEvent = eventos.length === 1 ? `${eventos[0].titulo}` : 'Generico';
+        console.log("NOMBRE: " + nameEvent);
         const ticketElement = document.createElement('div');
         ticketElement.classList.add('ticket-item');
         ticketElement.innerHTML = `
-            <p>Evento: ${eventoName.titulo}</p>
+            <p>Evento: ${nameEvent}</p>
             <p>Cantidad: ${ticket.quantity}</p>
             <p>Precio Total: ${ticket.total_price}</p>
             <p>Fecha: ${ticket.purchase_date}</p>
