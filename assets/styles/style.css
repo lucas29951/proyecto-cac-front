@@ -230,7 +230,7 @@ header {
     justify-content: space-around;
     align-items: center;
     border: 1px solid var(--main-black);
-    border-radius: 50px;
+    border-radius: 5px;
 }
 
 .data-groups {
