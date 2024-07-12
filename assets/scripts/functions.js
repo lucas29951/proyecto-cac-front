@@ -82,7 +82,17 @@ async function orderEvents(order){
 function logout() {
     localStorage.removeItem('user');
     window.location.href = './login.html';
-  };
+};
+
+function manageEvents() {
+    const bodyTitle = document.querySelector('.body-profile h5');
+    bodyTitle.remove();
+
+    const eventsContainer = document.getElementById('events-container');
+    let titulo = document.createElement('h2');
+    titulo.textContent = 'Gestion de Eventos';
+    eventsContainer.appendChild(titulo);
+}
 
 async function eventsByUser(search) {
     let user = JSON.parse(localStorage.getItem('user'));
@@ -129,5 +139,55 @@ async function displayTickets(tickets) {
             <p>Fecha: ${ticket.purchase_date}</p>
         `;
         ticketsContainer.appendChild(ticketElement);
+    });
+}
+
+async function displayAdminEvents() {
+    const events = await getApiData(api["eventapi"]+"/events");
+
+    const eventsContainer = document.getElementById('events-container');
+    if (!eventsContainer) {
+        console.error('No se encontró el contenedor de eventos.');
+        return;
+    }
+
+
+    if (events.length === 0) {
+        eventsContainer.innerHTML += '<p>No hay eventos cargados.</p>';
+        return;
+    }
+    
+    events.forEach(event => {
+        let nameCategory = '';
+        switch (event.category_id) {
+            case 1:
+                nameCategory = 'Musica';
+                break;
+            case 2:
+                nameCategory = 'Hobbies';
+                break;
+            case 3:
+                nameCategory = 'Arte';
+                break;
+            case 4:
+                nameCategory = 'Comida';
+                break;
+            case 5:
+                nameCategory = 'Entretenimiento';
+                break;
+            default:
+                break;
+        }
+        const eventElement = document.createElement('div');
+        eventElement.classList.add('event-item');
+        eventElement.innerHTML = `
+            <p>Evento: ${event.titulo}</p>
+            <p>Categoria: ${nameCategory}</p>
+            <p>Fecha y Hora: ${event.fechaHora}</p>
+            <p>Precio: ${event.precio}</p>
+            <p>Descripcion: ${event.descripcion}</p>
+            <p>Ubicacion: ${event.ubicacion}</p>
+        `;
+        eventsContainer.appendChild(eventElement);
     });
 }
