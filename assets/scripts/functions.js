@@ -138,9 +138,6 @@ async function displayTickets(tickets) {
 }
 
 function displayAdminEvents(events) {
-    const bodyTitle = document.querySelector('.body-profile h5');
-    bodyTitle.remove();
-
     const eventsContainer = document.getElementById('events-container');
     eventsContainer.innerHTML = '';
 
@@ -158,6 +155,19 @@ function displayAdminEvents(events) {
         return;
     }
     
+    let eventHeader = document.createElement('div');
+        eventHeader.classList.add('event-item');
+        eventHeader.innerHTML = `
+            <p>NOMBRE DEL EVENTO</p>
+            <p>CATEGORIA</p>
+            <p>FECHA Y HORA</p>
+            <p>PRECIO</p>
+            <p>DESCRIPCION</p>
+            <p>UBICACION</p>
+            <p>OPCIONES</p>
+        `;
+        eventsContainer.appendChild(eventHeader);
+
     events.forEach(event => {
         let nameCategory = '';
         switch (event.category_id) {
@@ -182,12 +192,14 @@ function displayAdminEvents(events) {
         const eventElement = document.createElement('div');
         eventElement.classList.add('event-item');
         eventElement.innerHTML = `
-            <p>Evento: ${event.titulo}</p>
-            <p>Categoria: ${nameCategory}</p>
-            <p>Fecha y Hora: ${event.fechaHora}</p>
-            <p>Precio: ${event.precio}</p>
-            <p>Descripcion: ${event.descripcion}</p>
-            <p>Ubicacion: ${event.ubicacion}</p>
+            <p>${event.titulo}</p>
+            <p>${nameCategory}</p>
+            <p>${event.fechaHora}</p>
+            <p>${event.precio}</p>
+            <p>${event.descripcion}</p>
+            <p>${event.ubicacion}</p>
+            <a href="#">Editar</a>
+            <a href="#">Borrar</a>
         `;
         eventsContainer.appendChild(eventElement);
     });
