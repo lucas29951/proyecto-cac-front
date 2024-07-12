@@ -153,6 +153,10 @@ header {
     text-decoration: none;
 }
 
+.confirm {
+    width: 100%;
+}
+
 .main-contact {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -171,6 +175,12 @@ header {
     display: flex;
     flex-direction: column;
     /* width: 100vw; */
+    margin: 3rem auto;
+}
+
+.main-manage {
+    display: flex;
+    flex-direction: column;
     margin: 3rem auto;
 }
 
@@ -227,6 +237,13 @@ header {
     align-items: start;
 }
 
+.manage-groups {
+    display: grid;
+    align-items: start;
+    width: 90%;
+    margin: 0 auto;
+}
+
 .contact-groups input {
     height: 2rem;
     padding: 0.5rem;
@@ -239,10 +256,24 @@ header {
     width: 100%;
 }
 
+.manage-groups input {
+    height: 2rem;
+    padding: 0.5rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
 .contact-groups textarea {
     height: 7rem;
     padding: 0.5rem;
     width: 100%;
+}
+
+.manage-groups textarea {
+    height: 7rem;
+    padding: 0.5rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
 }
 
 .contact-groups input[type="radio"],
@@ -256,6 +287,18 @@ header {
 
 .method-group .label-method {
     margin-right: 1rem;
+}
+
+.category-group {
+    margin-bottom: 1.5rem;
+}
+
+.category-group .label-category {
+    margin-right: 1rem;
+}
+
+.category-group select {
+    width: 100%;
 }
 
 .prefer-group {
@@ -303,6 +346,10 @@ header {
 }
 
 .upload-group input[type = "file"]{
+    height: max-content;
+}
+
+.image-group input[type = "file"]{
     height: max-content;
 }
 
