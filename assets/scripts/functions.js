@@ -155,18 +155,24 @@ function displayAdminEvents(events) {
         return;
     }
     
-    let eventHeader = document.createElement('div');
-        eventHeader.classList.add('event-item');
-        eventHeader.innerHTML = `
-            <p>NOMBRE DEL EVENTO</p>
-            <p>CATEGORIA</p>
-            <p>FECHA Y HORA</p>
-            <p>PRECIO</p>
-            <p>DESCRIPCION</p>
-            <p>UBICACION</p>
-            <p>OPCIONES</p>
-        `;
-        eventsContainer.appendChild(eventHeader);
+    const table = document.createElement('table');
+    table.classList.add('table', 'table-striped', 'table-bordered');
+
+    const thead = document.createElement('thead');
+    thead.innerHTML = `
+        <tr>
+            <th>NOMBRE DEL EVENTO</th>
+            <th>CATEGORIA</th>
+            <th>FECHA Y HORA</th>
+            <th>PRECIO</th>
+            <th>DESCRIPCION</th>
+            <th>UBICACION</th>
+            <th>OPCIONES</th>
+        </tr>
+    `;
+    table.appendChild(thead);
+
+    const tbody = document.createElement('tbody');
 
     events.forEach(event => {
         let nameCategory = '';
@@ -189,18 +195,22 @@ function displayAdminEvents(events) {
             default:
                 break;
         }
-        const eventElement = document.createElement('div');
-        eventElement.classList.add('event-item');
-        eventElement.innerHTML = `
-            <p>${event.titulo}</p>
-            <p>${nameCategory}</p>
-            <p>${event.fechaHora}</p>
-            <p>${event.precio}</p>
-            <p>${event.descripcion}</p>
-            <p>${event.ubicacion}</p>
-            <a href="#">Editar</a>
-            <a href="#">Borrar</a>
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${event.titulo}</td>
+            <td>${nameCategory}</td>
+            <td>${event.fechaHora}</td>
+            <td>${event.precio}</td>
+            <td>${event.descripcion}</td>
+            <td>${event.ubicacion}</td>
+            <td>
+                <a href="#">Editar</a> |
+                <a href="#">Borrar</a>
+            </td>
         `;
-        eventsContainer.appendChild(eventElement);
+        tbody.appendChild(row);
     });
+
+    table.appendChild(tbody);
+    eventsContainer.appendChild(table);
 }
