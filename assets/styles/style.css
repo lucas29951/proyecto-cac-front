@@ -217,6 +217,22 @@ header {
     align-items: center;
 }
 
+.events-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-item {
+    margin-bottom: 1rem;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid var(--main-black);
+    border-radius: 50px;
+}
+
 .data-groups {
     display: block;
 }
