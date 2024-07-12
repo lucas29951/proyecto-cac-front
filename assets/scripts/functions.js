@@ -84,14 +84,9 @@ function logout() {
     window.location.href = './login.html';
 };
 
-function manageEvents() {
-    const bodyTitle = document.querySelector('.body-profile h5');
-    bodyTitle.remove();
-
-    const eventsContainer = document.getElementById('events-container');
-    let titulo = document.createElement('h2');
-    titulo.textContent = 'Gestion de Eventos';
-    eventsContainer.appendChild(titulo);
+async function manageEvents() {
+    const events = await getApiData(api["eventapi"]+"/events");
+    displayAdminEvents(events);
 }
 
 async function eventsByUser(search) {
@@ -142,15 +137,21 @@ async function displayTickets(tickets) {
     });
 }
 
-async function displayAdminEvents() {
-    const events = await getApiData(api["eventapi"]+"/events");
+function displayAdminEvents(events) {
+    const bodyTitle = document.querySelector('.body-profile h5');
+    bodyTitle.remove();
 
     const eventsContainer = document.getElementById('events-container');
+    eventsContainer.innerHTML = '';
+
+    let titulo = document.createElement('h2');
+    titulo.textContent = 'Gestion de Eventos';
+    eventsContainer.appendChild(titulo);
+
     if (!eventsContainer) {
         console.error('No se encontró el contenedor de eventos.');
         return;
     }
-
 
     if (events.length === 0) {
         eventsContainer.innerHTML += '<p>No hay eventos cargados.</p>';
