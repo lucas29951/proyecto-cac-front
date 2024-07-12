@@ -141,9 +141,18 @@ function displayAdminEvents(events) {
     const eventsContainer = document.getElementById('events-container');
     eventsContainer.innerHTML = '';
 
+    let headBody = document.createElement('div');
+
     let titulo = document.createElement('h2');
     titulo.textContent = 'Gestion de Eventos';
-    eventsContainer.appendChild(titulo);
+    headBody.appendChild(titulo);
+
+    let buttonAdd = document.createElement('button');
+    buttonAdd.classList.add('btn-style');
+    buttonAdd.textContent = 'Agregar Evento';
+    headBody.appendChild(buttonAdd);
+
+    eventsContainer.appendChild(headBody);
 
     if (!eventsContainer) {
         console.error('No se encontró el contenedor de eventos.');
@@ -204,8 +213,8 @@ function displayAdminEvents(events) {
             <td>${event.descripcion}</td>
             <td>${event.ubicacion}</td>
             <td>
-                <a href="#">Editar</a> |
-                <a href="#">Borrar</a>
+                <a href="./eventView.html"><i class="fa-regular fa-pen-to-square"></i></a> |
+                <a href="#"><i class="fa-regular fa-trash-can"></i></a>
             </td>
         `;
         tbody.appendChild(row);
