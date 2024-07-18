@@ -257,7 +257,7 @@ async function addEvent() {
     const precio = document.getElementById('price').value;
     const imagen = document.getElementById('imageEvent').files[0];
 
-    if (!nombreEvento || !categoria || !fechaHora || !ubicacion || !descripcion || !precio || !imagen) {
+    if (!titulo || !categoria || !fechaHora || !ubicacion || !descripcion || !precio || !imagen) {
         alert("Por favor, complete todos los campos.");
         return;
     }
