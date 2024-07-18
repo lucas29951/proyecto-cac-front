@@ -150,6 +150,10 @@ function displayAdminEvents(events) {
     let buttonAdd = document.createElement('button');
     buttonAdd.classList.add('btn-style');
     buttonAdd.textContent = 'Agregar Evento';
+    buttonAdd.id = "btnAgregar";
+
+    buttonAdd.addEventListener('click', window.location.href = './eventView.html');
+
     headBody.appendChild(buttonAdd);
 
     eventsContainer.appendChild(headBody);
