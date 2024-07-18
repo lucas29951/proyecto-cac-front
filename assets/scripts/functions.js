@@ -225,6 +225,8 @@ function displayAdminEvents(events) {
 }
 
 async function deleteEvent(id) {
+    let user = JSON.parse(localStorage.getItem('user'));
+
     fetch(api["eventapi"]+`/events/${id}`, {
         method: 'DELETE',
         headers: {
