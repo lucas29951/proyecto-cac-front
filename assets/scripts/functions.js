@@ -247,3 +247,39 @@ async function deleteEvent(id) {
     })
     .catch(error => console.error('Error al obtener al eliminar evento:', error));
 }
+
+async function addEvent() {
+    const titulo = document.getElementById('nameEvent').value;
+    const categoria = document.getElementById('category').value;
+    const fechaHora = document.getElementById('dateTimeEvent').value;
+    const ubicacion = document.getElementById('location').value;
+    const descripcion = document.getElementById('description').value;
+    const precio = document.getElementById('price').value;
+    const imagen = document.getElementById('imageEvent').files[0];
+
+    if (!nombreEvento || !categoria || !fechaHora || !ubicacion || !descripcion || !precio || !imagen) {
+        alert("Por favor, complete todos los campos.");
+        return;
+    }
+
+    fetch(api["eventapi"]+'/events', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ titulo: titulo, fechaHora: fechaHora, ubicacion: ubicacion, descripcion: descripcion, precio: precio, imagen: imagen, category_id: categoria }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert("Evento agregado con éxito!");
+            window.location.href = './profile.html';
+        } else {
+            alert("Hubo un error al agregar el evento.");
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("Hubo un error al agregar el evento.");
+    });
+}
