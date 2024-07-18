@@ -152,7 +152,10 @@ function displayAdminEvents(events) {
     buttonAdd.textContent = 'Agregar Evento';
     buttonAdd.id = "btnAgregar";
 
-    buttonAdd.addEventListener('click', window.location.href = './eventView.html');
+    buttonAdd.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.location.href = './eventView.html';
+    });
 
     headBody.appendChild(buttonAdd);
 
