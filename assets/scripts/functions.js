@@ -214,7 +214,7 @@ function displayAdminEvents(events) {
             <td>${event.ubicacion}</td>
             <td>
                 <a href="./eventView.html"><i class="fa-regular fa-pen-to-square"></i></a> |
-                <a href="#"><i class="fa-regular fa-trash-can"></i></a>
+                <a href="#" onclick="deleteEvent(${event.id})"><i class="fa-regular fa-trash-can"></i></a>
             </td>
         `;
         tbody.appendChild(row);
@@ -222,4 +222,18 @@ function displayAdminEvents(events) {
 
     table.appendChild(tbody);
     eventsContainer.appendChild(table);
+}
+
+async function deleteEvent(id) {
+    fetch(api["eventapi"]+`/events/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Authorization': `Bearer ${user.accessToken}`
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => console.error('Error al obtener los tickets:', error));
 }
