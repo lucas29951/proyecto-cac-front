@@ -235,7 +235,8 @@ async function deleteEvent(id) {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        alert("Evento eliminado!");
+        window.location.reload();
     })
-    .catch(error => console.error('Error al obtener los tickets:', error));
+    .catch(error => console.error('Error al obtener al eliminar evento:', error));
 }
