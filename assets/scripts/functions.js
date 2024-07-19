@@ -248,7 +248,10 @@ async function deleteEvent(id) {
     .catch(error => console.error('Error al obtener al eliminar evento:', error));
 }
 
-async function addEvent() {
+function addEvent(event) {
+    event.preventDefault();
+    let user = JSON.parse(localStorage.getItem('user'));
+
     const titulo = document.getElementById('nameEvent').value;
     const categoria = document.getElementById('category').value;
     const fechaHora = document.getElementById('dateTimeEvent').value;
@@ -265,7 +268,8 @@ async function addEvent() {
     fetch(api["eventapi"]+'/events', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${user.accessToken}`
         },
         body: JSON.stringify({ titulo: titulo, fechaHora: fechaHora, ubicacion: ubicacion, descripcion: descripcion, precio: precio, imagen: imagen, category_id: categoria }),
     })
