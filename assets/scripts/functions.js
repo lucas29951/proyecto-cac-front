@@ -335,7 +335,7 @@ function requestModify(id) {
     .then(data => {
         if (data) {
             alert("Evento modificado!");
-            window.location.href = './profile.html';
+            // window.location.href = './profile.html';
         } else {
             alert("Hubo un error al modificar el evento.");
         }
