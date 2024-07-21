@@ -289,11 +289,51 @@ function addEvent(event) {
         alert("Hubo un error al agregar el evento.");
     });
 } else {
-    alert('Evento Modificado!');
+    requestModify(eventID);
+    localStorage.removeItem('eventID');
 }
 }
 
 function modifyEvent(id) {
     localStorage.setItem('eventID', id);
     window.location.href = './eventView.html';
+}
+
+function requestModify(id) {
+    let user = JSON.parse(localStorage.getItem('user'));
+
+    const titulo = document.getElementById('nameEvent').value;
+    const categoria = document.getElementById('category').value;
+    const fechaHora = document.getElementById('dateTimeEvent').value;
+    const ubicacion = document.getElementById('location').value;
+    const descripcion = document.getElementById('description').value;
+    const precio = document.getElementById('price').value;
+    const imagen = document.getElementById('imageEvent').files[0];
+
+    if (!titulo || !categoria || !fechaHora || !ubicacion || !descripcion || !precio || !imagen) {
+        alert("Por favor, complete todos los campos.");
+        return;
+    }
+
+    fetch(api["eventapi"]+`/events/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${user.accessToken}`
+        },
+        body: JSON.stringify({ titulo: titulo, fechaHora: fechaHora, ubicacion: ubicacion, descripcion: descripcion, precio: precio, imagen: imagen, category_id: categoria }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data) {
+            alert("Evento modificado!");
+            window.location.href = './profile.html';
+        } else {
+            alert("Hubo un error al modificar el evento.");
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("Hubo un error al editar el evento.");
+    });
 }
