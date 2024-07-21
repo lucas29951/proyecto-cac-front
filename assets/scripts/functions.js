@@ -220,7 +220,7 @@ function displayAdminEvents(events) {
             <td>${event.descripcion}</td>
             <td>${event.ubicacion}</td>
             <td>
-                <a href="./eventView.html"><i class="fa-regular fa-pen-to-square"></i></a> |
+                <a href="#" onclick="modifyEvent(${event.id})"><i class="fa-regular fa-pen-to-square"></i></a> |
                 <a href="#" onclick="deleteEvent(${event.id})"><i class="fa-regular fa-trash-can"></i></a>
             </td>
         `;
@@ -286,4 +286,9 @@ function addEvent(event) {
         console.error('Error:', error);
         alert("Hubo un error al agregar el evento.");
     });
+}
+
+function modifyEvent(id) {
+    localStorage.setItem('eventID', id);
+    window.location.href = './eventView.html';
 }
