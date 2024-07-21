@@ -251,6 +251,7 @@ async function deleteEvent(id) {
 function addEvent(event) {
     event.preventDefault();
     let user = JSON.parse(localStorage.getItem('user'));
+    let eventID = localStorage.getItem('eventID');
 
     const titulo = document.getElementById('nameEvent').value;
     const categoria = document.getElementById('category').value;
@@ -265,6 +266,7 @@ function addEvent(event) {
         return;
     }
 
+    if (!eventID) {
     fetch(api["eventapi"]+'/events', {
         method: 'POST',
         headers: {
@@ -286,6 +288,9 @@ function addEvent(event) {
         console.error('Error:', error);
         alert("Hubo un error al agregar el evento.");
     });
+} else {
+    alert('Evento Modificado!');
+}
 }
 
 function modifyEvent(id) {
