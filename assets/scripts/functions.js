@@ -291,6 +291,7 @@ function addEvent(event) {
 } else {
     requestModify(eventID);
     localStorage.removeItem('eventID');
+    window.location.href = './profile.html';
 }
 }
 
@@ -309,14 +310,6 @@ function requestModify(id) {
     const descripcion = document.getElementById('description').value;
     const precio = document.getElementById('price').value;
     const imagen = document.getElementById('imageEvent').files[0];
-    console.log("Titulo: " + titulo);
-    console.log("Categoria: " + categoria);
-    console.log("Fecha y Hora: " + fechaHora);
-    console.log("Ubicacion: " + ubicacion);
-    console.log("Descripcion: " + descripcion);
-    console.log("Precio: " + precio);
-    console.log("Imagen: " + imagen.name);
-    console.log("Imagen: " + imagen.filename);
 
     if (!titulo || !categoria || !fechaHora || !ubicacion || !descripcion || !precio || !imagen) {
         alert("Por favor, complete todos los campos.");
@@ -335,7 +328,6 @@ function requestModify(id) {
     .then(data => {
         if (data) {
             alert("Evento modificado!");
-            // window.location.href = './profile.html';
         } else {
             alert("Hubo un error al modificar el evento.");
         }
