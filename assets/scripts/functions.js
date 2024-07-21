@@ -279,7 +279,7 @@ function addEvent(event) {
             alert("Evento agregado con éxito!");
             window.location.href = './profile.html';
         } else {
-            alert("Hubo un error al agregar el evento.");
+            alert("Hubo un error con el data success!.");
         }
     })
     .catch(error => {
