@@ -309,6 +309,14 @@ function requestModify(id) {
     const descripcion = document.getElementById('description').value;
     const precio = document.getElementById('price').value;
     const imagen = document.getElementById('imageEvent').files[0];
+    console.log("Titulo: " + titulo);
+    console.log("Categoria: " + categoria);
+    console.log("Fecha y Hora: " + fechaHora);
+    console.log("Ubicacion: " + ubicacion);
+    console.log("Descripcion: " + descripcion);
+    console.log("Precio: " + precio);
+    console.log("Imagen: " + imagen.name);
+    console.log("Imagen: " + imagen.filename);
 
     if (!titulo || !categoria || !fechaHora || !ubicacion || !descripcion || !precio || !imagen) {
         alert("Por favor, complete todos los campos.");
@@ -321,7 +329,7 @@ function requestModify(id) {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${user.accessToken}`
         },
-        body: JSON.stringify({ titulo: titulo, fechaHora: fechaHora, ubicacion: ubicacion, descripcion: descripcion, precio: precio, imagen: imagen, category_id: categoria }),
+        body: JSON.stringify({ titulo: titulo, fechaHora: fechaHora, ubicacion: ubicacion, descripcion: descripcion, precio: precio, imagen: imagen.name, category_id: categoria }),
     })
     .then(response => response.json())
     .then(data => {
