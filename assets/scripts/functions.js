@@ -275,11 +275,11 @@ function addEvent(event) {
     })
     .then(response => response.json())
     .then(data => {
-        if (data.success) {
+        if (data) {
             alert("Evento agregado con éxito!");
             window.location.href = './profile.html';
         } else {
-            alert("Hubo un error con el data success!.");
+            alert("Hubo un error al agregar el evento.");
         }
     })
     .catch(error => {
