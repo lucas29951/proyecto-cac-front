@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.getElementById('nameEvent').value = data.titulo;
         document.getElementById('category').value = data.category_id;
-        document.getElementById('dateTimeEvent').value = data.fechaHora;
+        // document.getElementById('dateTimeEvent').value = data.fechaHora;
         document.getElementById('location').value = data.ubicacion;
         document.getElementById('description').value = data.descripcion;
         document.getElementById('price').value = data.precio;
-        document.getElementById('imageEvent').value = data.imagen;
+        // document.getElementById('imageEvent').value = data.imagen;
     })
     .catch(error => {
         console.error('Error:', error);
