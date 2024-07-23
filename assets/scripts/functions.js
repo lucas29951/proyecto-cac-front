@@ -337,35 +337,3 @@ function requestModify(id) {
         alert("Hubo un error al editar el evento.");
     });
 }
-
-function buyTicket(event) {
-    event.preventDefault();
-
-    const evento = JSON.parse(localStorage.getItem("eventoSeleccionado"));
-    const user = JSON.parse(localStorage.getItem('user'));
-
-    let cantidad = 1;
-    let total = evento.precio * cantidad;
-
-    fetch(api["eventapi"]+'/tickets', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${user.accessToken}`
-        },
-        body: JSON.stringify({ user_id: user.id, event_id: evento.id, quantity: cantidad, total_price: total }),
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data) {
-            alert("Ticket comprado con éxito!");
-            window.location.href = './index.html';
-        } else {
-            alert("Hubo un error al comprar el ticket.");
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert("Hubo un error en la compra.");
-    });
-}
