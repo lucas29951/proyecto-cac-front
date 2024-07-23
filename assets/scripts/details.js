@@ -21,6 +21,9 @@ document.getElementById('btn-compra').addEventListener('click', async (event) =>
     const userLogged = JSON.parse(localStorage.getItem('user'));
     const eventSelected = JSON.parse(localStorage.getItem('eventoSeleccionado'));
 
+    let cantidad = 1;
+    let total = eventSelected.precio * cantidad;
+
     if (!userLogged || !eventSelected) {
         alert("Error: No se encontro informacion del usuario o evento.");
         return;
@@ -29,8 +32,8 @@ document.getElementById('btn-compra').addEventListener('click', async (event) =>
     const newTicket = {
         user_id: userLogged.id,
         event_id: eventSelected.id,
-        quantity: 1,
-        total_price: eventSelected.precio
+        quantity: cantidad,
+        total_price: total
     }
 
     try {
